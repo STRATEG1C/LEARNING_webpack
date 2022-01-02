@@ -1,0 +1,5 @@
+.hello {
+    color: green;
+    background: url('./assets/icon.png') center no-repeat;
+    background-size: contain;
+}
