@@ -1,13 +1,18 @@
-async function getComponent() {
-  const element = document.createElement('div');
+import _ from 'lodash';
+import Print from './print.js';
 
-  const { default: _ } = await import('lodash');
+function component() {
+  const element = document.createElement('div');
+  const btn = document.createElement('button');
 
   element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+
+  btn.innerHTML = 'Click me and check the console!';
+  btn.onclick = Print.bind(null, 'Hello webpack!');
+
+  element.appendChild(btn);
 
   return element;
 }
 
-getComponent().then((component) => {
-  document.body.appendChild(component);
-})
+document.body.appendChild(component());
