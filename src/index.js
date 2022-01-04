@@ -10,6 +10,8 @@ function component() {
   btn.innerHTML = 'Click me and check the console!';
   btn.onclick = Print.bind(null, 'Hello webpack!');
 
+  console.log(process);
+
   element.appendChild(btn);
 
   return element;
